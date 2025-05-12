@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mount Barker Olive Grove</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    
+    
+    <body>
+        <section id="banner" style="background-image: url(img/friends_olive_picking.jpg);">
+            
+                <nav>
+                    <ul class="nav-list">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="grove.html">THE GROVE</a></li>
+                        <li><a href="oil.html">THE OIL</a></li>
+                        <li><a href="space.html">THE SPACE</a></li>
+                        <li><a href="story.html">THE STORY</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+            
+                <div id="banner_img">
+                    <img src="img/MBlogo_f4f4f5.png" alt="" class="logo" />
+                </div>
+            
+        </section>
+        
+        
+<!--   150kg to over a ton, good core, started with just the family, then family and friends, traditions of olive harvesting, bringing people together, a celebration of a harvest,  -->
+        
+        
+        <section id="welcome"  class="container">
+
+            <h1>THE STORY</h1>
+            <p><br>
+            The Prince/Baker family first took ownership of the Mount Barker property in 2013, inheriting a young but established olive grove.
+            <br><br>
+            Over the years, they have carefully tended and cultivated the trees, watching the harvest grow and finding their rhythm with the land. What began as a small family venture has quietly evolved into something larger: a gathering place for friends, neighbours, and travellers, all drawn by the simplicity, satisfaction, and magic of the harvest.
+            <br><br>
+
+            In the beginning, it was just the family—picking by hand, pressing small batches, and learning the way of the land.
+            Soon, others began to join in—friends, neighbours, even backpackers passing through. The kind of people who bring food to share, who linger long after the last bucket is full, who feel the quiet magic in the air. What began as a harvest soon became a celebration—a moment to pause, connect, and appreciate the bounty of the season. And with each passing year, the tradition deepened. More hands, more laughter, more shared meals. A growing community, bound together by the work, the land, and the stories woven into every harvest.
+            <br><br>
+
+            It’s a reflection of the care they’ve put into the land, and the relationships that have grown alongside it. Every bottle of our olive oil carries a little piece of that—of the people who’ve joined in, the work put in, and the quiet satisfaction of creating something that’s truly theirs, rooted in the land, in community, and in time.
+            </p>
+
+        </section>
+        
+        <section>            
+            <div class="container three_images">
+                <img  src="img/story/dad.JPG" alt="" style="width: 25%;"/>
+                <img  src="img/story/dodd_friends.jpg" alt="" style="width: 50%;"/>
+                <img  src="img/story/family_xmas.JPG" alt="" style="width: 25%;"/>
+            
+            </div>
+           
+        </section>
+        
+<!--
+        <section id="slideshow" class="container">
+            
+            <img class="slideshow_img fade" src="img/grove/riding_trailer.JPG">
+            <img class="slideshow_img fade" src="img/grove/round_the_fire.JPG">
+            <img class="slideshow_img fade" src="img/story/family_xmas.JPG">
+            <img class="slideshow_img fade" src="img/story/dodd_friends.jpg">
+
+        
+        
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+        </section>
+-->
+<!--
+        
+        <script>
+//            var slideIndex = 1;
+//            showSlides(slideIndex);
+//
+//            function plusSlides(n) {
+//              showSlides(slideIndex += n);
+//            }
+//
+//            function showSlides(n) {
+//              var i;
+//              var x = document.getElementsByClassName("slideshow_img");
+//              if (n > x.length) {slideIndex = 1}
+//              if (n < 1) {slideIndex = x.length}
+//              for (i = 0; i < x.length; i++) {
+//                x[i].style.display = "none";  
+//              }
+//              x[slideIndex-1].style.display = "block";  
+//            }
+            
+            
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+              let i;
+              let slides = document.getElementsByClassName("slideshow_img");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}
+              slides[slideIndex-1].style.display = "block";
+              setTimeout(showSlides, 4000); // Change image every 2 seconds
+            }
+            
+            
+        </script>
+-->
+        
+        
+        
+<!--
+        <section id="footer_img"  style="background-image: url(img/mtbarker.JPG);">
+            <div class="container">
+                <img src="img/Georgia%20Prince%20-%20IC%20Local%20walk%20up%20Mt%20Barker.JPG" alt="" style="width:100px"/>
+            </div>
+        </section>
+-->
+        
+        
+        <section id="footer">
+            <div class="container">
+                <div id="footer_image">
+                    <img src="img/MBlogo_112530.png" alt=""/>
+                </div>
+                <div id="footer_content">
+                    <div class="content">
+                        <h1>GOOD OIL, GOOD PEOPLE</h1>
+                        <p>Join us on this journey and stay in touch!</p>
+                    </div>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="bba24ab1-0419-4e90-be31-815d216cb6bd">
+                        <label for="name"></label><br>
+                        <input type="text" placeholder="NAME" name="name" required><br>
+                        <label for="email"></label><br>
+                        <input type="text" placeholder="EMAIL ADDRESS" name="email" required><br><br>
+                        <button type="submit">JOIN!</button>
+                    </form>
+<!--
+                    <div class="infobutton">
+                        <button class="learnmorebutton">JOIN!</button>
+                    </div>
+-->
+                    <p class="footertext">© 2025 MOUNT BARKER OLIVE GROVE | <a href="contact.html">Contact Us</a></p>
+                </div>
+            </div>
+        </section>
+        
+        
+    </body>
+</html>

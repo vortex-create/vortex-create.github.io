@@ -1,0 +1,946 @@
+/*
+<!--
+@font-face {
+    font-family: waterway;
+    src: local('waterway'), url('Waterway_Display_Font.woff') format('woff');
+}
+
+* {
+  font-family: waterway;
+    
+}
+
+body {
+  font-family: waterway;
+}
+-->
+*/
+
+@import url('https://fonts.cdnfonts.com/css/avenir');
+
+
+@font-face {
+    font-family: 'WaterwayDisplay';
+    src: url('font/Waterway_Display_Font.woff2') format('woff2'),
+         url('font/Waterway_Display_Font.woff') format('woff'),
+         url('font/Waterway_Display_Font.ttf') format('truetype'),
+         url('font/Waterway_Display_Font.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*----------------------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------------------*/
+
+
+
+
+
+body {
+    font-family: 'Avenir', sans-serif;
+
+/*    font-family: 'WaterwayDisplay', sans-serif;*/
+    color: var(--medium_green);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --white: #f4f4f5;
+    --light_green: #bbccc1;
+    --medium_green: #4d5727;
+    --dark_green: #2d2813;
+    --dark_blue: #112530;
+    --cream: #ffefdb;
+}
+
+h1 {
+    padding-bottom: 20px;    
+}
+
+#banner {
+/*    background-image: url(img/DSC07487.JPG);*/
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+#banner_img {
+    width: auto;
+    height: 90vh;
+    
+    display: flex;
+    justify-content: center;    /*width*/
+    align-items: center;        /*height*/
+/*    background-image: radial-gradient(rgba(255, 0, 0, 0.), rgba(78, 125, 199, 0));*/
+}
+
+#banner .logo, #banner_grove .logo {
+    object-fit: contain;
+    width: 320px;
+    position: absolute;
+    
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark_blue);
+}
+
+.container {
+    max-width: 1200px;
+/*    padding: 16px;*/
+    margin: auto;
+}
+
+#logofade {
+    width: 620px;
+    height: 400px;
+/*        border: 3px solid aqua;*/
+
+        background-image: radial-gradient(rgba(83, 90, 32, 0.2), rgba(244, 244, 245, 0.0),rgba(244, 244, 245, 0));
+}
+
+#fade_home {
+    height: 150px;
+
+  background-image: linear-gradient(to top, rgba(17, 37, 48,0), rgba(78, 125, 199, 0.2));
+}
+
+#fade_green {
+    height: 200px;
+    background-image: linear-gradient(to top, rgba(77, 87, 39,0), rgba(77,87,39,0.5));
+}
+
+nav {
+    display:flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+
+.nav-list a{
+    color: var(--white);
+/*    font-family: 'WaterwayDisplay', sans-serif;*/
+/*     font-weight: bold;*/
+    font-size: 18px;
+}
+
+img {
+/*    width: 100px;  Adjust the width as needed */
+/*    height: auto;  Maintains aspect ratio */
+}
+
+.learnmorebutton {
+    padding: 12px 30px; /* height width */
+    background: transparent;
+    color: var(--medium_green);
+    border: 3px solid var(--light_green);
+    cursor: pointer;    
+    outline: none;
+    transition-duration: 0.4s;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.learnmorebutton:hover {
+    background-color: var(--light_green);
+    color: var(--white);
+}
+
+#welcome {
+    text-align: center;
+    padding: 40px;
+}
+
+#welcome h1 {
+    padding-bottom: 10px;
+}
+
+#grove .container {
+    height: 350px;
+/*    border: 3px solid aqua;*/
+    display: flex;
+/*    flex-direction: row;*/
+/*    flex-wrap: wrap;*/
+}
+
+#grove_image {
+    height: auto;
+    width: 50%;
+/*    border: 3px solid red;*/
+    overflow: hidden;
+/*    text-align: center;*/
+/*    object-fit: cover;*/
+    background-image: url(img/zoe_olive_picking.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#grove_content {
+/*    border: 3px solid yellow;*/
+    width: 50%;
+    height: auto;
+/*    overflow: hidden;*/
+/*    padding: 40px;*/
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #ecf2ce;
+}
+
+#grove_content .content {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+#grove_content .infobutton {
+    padding-bottom: 10%;
+}
+
+.infobutton {
+    text-align: center;
+}
+
+#oil {
+    height: 500px;
+}
+
+#oil .container {
+    height: 500px;
+    padding: 10px;
+}
+
+#oil_image {
+    height: 480px;
+    width: 100%;
+    background-image: url(img/stefan_olive_picking.jpg);
+    background-position: top;
+    background-size: cover;
+    padding: 30px;
+}
+
+
+
+#oil_content {
+    background-color: rgba(244, 244, 245, 0.8); /* f4f4f5 */
+    padding: 20px;
+    display: flex;
+}
+
+#oil_content .content {
+    width: 50%;
+}
+
+#oil_content .infobutton {
+    width: 50%;
+    padding-left: 60px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+/*    border: 3px solid pink;*/
+
+#space .container {
+    height: auto;
+/*    border: 3px solid pink;*/
+}
+
+#space_image {
+    height: 400px;
+/*    border: 3px solid yellow;*/
+    width: 100%;
+    background-image: url(img/space/upstairs_view.jpg);
+    background-position: center;
+    background-size: cover;
+/*    overflow: hidden;*/
+    
+}
+
+#space_content {
+/*    border: 3px solid orange;*/
+    padding: 30px;
+    padding-bottom: 40px;
+
+}
+
+#space_content .content {
+/*    border: 3px solid blue;*/
+    height: auto;
+    padding-bottom: 30px;
+}
+
+#story {
+/*        border: 3px solid pink;*/
+
+    
+}
+
+#story .container{
+    height: auto;
+    min-height: 400px;
+/*    border: 3px solid blue;*/
+/*    background-color: var(--light_green);*/
+    display: flex;
+    background-color: #f2ebdb;
+/*    background-color: #ebe4e4;*/
+
+}
+
+#story_content {
+    width: 50%;
+    padding-left: 40px;
+/*    padding-right: 30px;*/
+    margin-right: 40px;
+/*    border: 3px solid yellow;*/
+
+}
+
+#story_content .content {
+    padding-top: 15%;
+    padding-bottom: 15%;
+/*    border: 3px solid red;*/
+
+}
+
+
+#story_content .infobutton {
+    padding-bottom: 10%;
+/*    border: 3px solid blue;*/
+
+}
+
+#story_image {
+    width: 50%;
+/*    border: 3px solid red;*/
+    overflow: hidden;
+    margin: 30px;
+    background-image: url(img/friends_olive_picking.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+#slideshow {
+    max-width: 1200px; /*900px*/
+    height: 700px; /*650px*/
+    background-position: center;
+/*    margin: auto;*/
+/*    border: 3px solid blue;*/
+     position: relative;
+  margin: auto;
+    padding-bottom: 50px;
+}
+
+/*
+#slideshow .img {
+    vertical-align: middle;
+}
+*/
+
+#slideshow .slideshow_img {
+    width: 100%;
+    height: 100%;
+/*    background-size: cover;*/
+/*    border: 3px solid pink;*/
+    object-fit: cover;
+    object-position: center;
+}
+
+/*
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    margin-left: 15px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--white);
+    transition: 0.6s ease;
+    border-radius: 30px 30px 30px 30px;
+    user-select: none;
+    background-color: rgb(17, 37, 48, 0.3);
+
+}
+
+.next {
+    right: 0;
+    margin-right: 15px;
+}
+
+ On hover, add a black background color with a little bit see-through 
+.next:hover, .prev:hover {
+    background-color: rgb(17, 37, 48, 0.8);
+}
+*/
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .8}
+  to {opacity: 1}
+}
+
+
+#footer_img {
+    background-size: cover;
+    height: 700px;
+    max-width: 1200px;
+    background-position: center;
+    margin: auto;
+}
+
+#footer .container {
+    height: 220px;
+    display: flex;
+/*    border: 3px solid green;*/
+    justify-content: center;
+}
+
+#footer_image {
+/*    border: 3px solid red;*/
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 35%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+#footer_image img {
+    width: auto;
+    height: 200px;
+/*    border: 3px solid yellow;*/
+}
+
+#footer_content {
+/*    padding: 20px;*/
+    padding-left: 40px;
+    padding-top: 25px;
+/*    border: 3px solid pink;*/
+    color: var(--dark_blue);
+    width: 70%;
+}
+
+#footer_content .content {
+/*    border: 3px solid red;*/
+}
+
+/*----------------------------------------------------------------*/
+
+
+form {
+/*    border: 3px solid orange;*/
+    display: flex;
+
+}
+
+input[type=text] {
+    margin-right: 20px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    padding: 12px 5px;  /*height width */
+    width: 220px;
+/*    background: transparent;*/
+    color: var(--dark_blue);
+    border: 3px solid var(--light_green);
+/*    display: inline-block;*/
+/*    box-sizing: border-box;*/
+}
+
+
+form button[type=submit] {
+    margin: 18px 18px;
+    padding: 12px 28px;  /*height width */
+    background-color: var(--dark_blue);
+    color:  var(--white);
+    border: 3px solid var(--light_green);
+}
+
+input[placeholder=name], input[placeholder=email address] {
+    color: var(--dark_blue);
+    
+}
+
+#footer_content .footertext {
+    text-align: center;
+    padding-top: 20px;
+/*    padding-bottom: 5px;*/
+}
+
+
+/*
+<div id="footer_content">
+                    <div class="content">
+                        <h1>GOOD OIL, GOOD PEOPLE</h1>
+                        <p>Join us on this journey and stay in touch!</p>
+                    </div>
+                    <form action="/action_page.php"> <!--ADD ACTION PAGE-->
+                        <label for="name"></label><br>
+                        <input type="text" placeholder="NAME" name="name"><br>
+                        <label for="email"></label><br>
+                        <input type="text" placeholder="EMAIL" name="email"><br><br>
+                        <input type="submit" value="JOIN US">
+                    </form>
+                    <div class="infobutton">
+                        <button class="learnmorebutton">JOIN!</button>
+                    </div>
+                    <p>© 2025 MOUNT BARKER OLIVE GROVE | <a href="[INSERT LINK]">Contact Us</a></p>
+                </div>*/
+
+#contact {
+    display: flex; 
+}
+
+#contact h1 {
+    padding-bottom: 10px;
+}
+
+
+/*
+@media screen and (max-width:800px) {
+    
+    #left {
+    width: 100%;
+    padding: 40px;
+}
+    
+}
+
+@media screen and (min-width:801px) {
+    
+    #left {
+    width: 50%;
+    padding: 40px;
+}
+*/
+
+#left {
+    width: 50%;
+    padding: 40px;
+}
+
+
+#right {
+    width: 50%;
+/*    display: flex;*/
+    padding: 40px;
+    text-align: right;
+}
+
+#right form {
+    display: flex;
+    margin: auto;
+    display: table-cell;
+    width: 220px;
+    float: right;
+}
+
+#right input[type=text] {
+    width: 300px;
+    float: right;
+    margin-right: 0px;
+}
+
+#right button[type=submit] {
+/*    width: 300px;*/
+    float: right;
+    margin-right: 0px;
+}
+
+    
+    
+    
+@media screen and (max-width:800px) {
+    #contact {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #left {
+        width: 100%;
+    }
+
+
+    #right {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 0;
+        padding-bottom: 30px;
+        text-align: center;
+/*        float: none;*/
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    #right form {
+        display: flex;
+        margin: auto;
+        display: table-cell;
+        width: 300px;
+        float: left;
+/*        border: 3px solid aqua;*/
+
+    }
+    
+    #right input[type=text] {
+        width: 300px;
+        float: left;
+    }
+
+    #right input[type=submit] {
+        float: left;
+        margin-right: 0px;
+    }
+    
+    
+/*    --------------     FOOTER     ---------------*/
+    
+    #footer_image img {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    
+    #footer_image {
+        display: none;
+        width: 0;
+/*        border: 3px solid green;*/
+        height: 0;
+    }
+    
+    
+    #footer {
+        height: auto;
+        display: flex;
+        padding-top: 20px;
+    }
+    
+    
+     #footer .container {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    #footer #footer_content {
+        width: auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    
+    #footer_content {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #footer_content .content {
+        text-align:  center;
+    }
+        
+    #footer form {
+        display: flex;
+        flex-direction: column;
+/*        border: 3px solid yellow;*/
+        align-items: center;
+        padding: 10px;
+    }
+    
+    #footer form br {
+        display: none;
+    }
+    
+    #footer input {
+        margin: 0;
+    }
+    
+    #footer input {
+        margin: 10px;
+    }
+    
+    #footer button {
+        margin-bottom: 0;
+    }
+    
+
+    
+}
+
+/*    ------------------------*/
+
+
+@media screen and (max-width:700px) {
+
+    #banner_img {
+        height: 50vh;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+    }
+    
+    .nav-list a{
+        float: right;
+    }
+
+    #fade_home {
+        height: 100vh;
+        background-image: linear-gradient(to right, rgba(17, 37, 48,0), rgba(78, 125, 199, 0.25));
+    }
+    
+    #fade_green {
+        height: 100vh;
+        background-image: linear-gradient(to top, rgba(77, 87, 39,0), rgba(77,87,39,0.5));
+    }
+    
+    #fade_orange {
+        height: 100vh;
+        background-image: linear-gradient(to top, rgba(77, 87, 39,0), rgba(87, 72, 39, 0.3));
+    }
+    
+}
+    
+@media screen and (max-width:600px) {  
+/*    ________GROVE________*/
+        
+    #grove .container {
+        height: auto;
+        flex-direction: column;
+    }
+
+    #grove_image {
+        height: 400px;
+    /*    border: 3px solid yellow;*/
+        width: 100%;
+    /*    background-image: url(img/space/upstairs_view.jpg);*/
+        background-position: center;
+        background-size: cover;
+    /*    overflow: hidden;*/
+
+    }
+
+    #grove_content {
+    /*    border: 3px solid orange;*/
+        padding: 30px;
+        padding-bottom: 40px;
+        width: 100%;
+    }
+
+    #grove_content .content {
+    /*    border: 3px solid blue;*/
+        height: auto;
+        padding-bottom: 30px;
+        padding-top: 3%;
+    }
+    
+    #grove_content .infobutton {
+        padding-bottom: 3%;
+    }
+
+    
+    /*    ________OIL________*/
+        
+    #oil {
+        height: auto;
+    }
+    
+    #oil .container {
+        height: auto;
+        flex-direction: column;
+    }
+
+    #oil_image {
+        height: 400px;
+    /*    border: 3px solid yellow;*/
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+    /*    overflow: hidden;*/
+
+    }
+
+    #oil_content {
+/*        border: 3px solid orange;*/
+        padding: 30px;
+        padding-bottom: 40px;
+        width: 100%;
+        flex-direction: column;
+/*        border: 3px solid red;*/
+        align-items: center;
+    }
+
+    #oil_content .content {
+    /*    border: 3px solid blue;*/
+        height: auto;
+        padding-bottom: 30px;
+        width: 100%;
+/*        border: 3px solid yellow;*/
+
+    }
+    
+    #oil_content .infobutton {
+/*        width: 100%;*/
+        padding-left: 0;
+    }
+
+    #oil_image {
+        height: 480px;
+        width: 100%;
+        background-image: url(img/stefan_olive_picking.jpg);
+        background-position: top;
+        background-size: cover;
+        padding: 30px;
+    }
+
+    #oil_content {
+        background-color: rgba(244, 244, 245, 0.8); /* f4f4f5 */
+        padding: 20px;
+        display: flex;
+    }
+
+
+    /*    ________STORY________*/
+        
+    #story .container {
+        height: auto;
+        flex-direction: column-reverse;
+    }
+
+    #story_image {
+        height: 400px;
+    /*    border: 3px solid yellow;*/
+        width: 100%;
+    /*    background-image: url(img/space/upstairs_view.jpg);*/
+        background-position: center;
+        background-size: cover;
+    /*    overflow: hidden;*/
+        margin: 0;
+
+    }
+
+    #story_content {
+    /*    border: 3px solid orange;*/
+        padding: 30px;
+        padding-bottom: 40px;
+        width: 100%;
+    }
+
+    #story_content .content {
+    /*    border: 3px solid blue;*/
+        height: auto;
+        padding-bottom: 30px;
+        padding-top: 3%;
+    }
+
+    #story_content .infobutton {
+        padding-bottom: 3%;
+    }
+
+    
+}
+    
+/*
+#story .container{
+    height: auto;
+    min-height: 400px;
+    display: flex;
+    background-color: #f2ebdb;
+}
+
+#story_content {
+    width: 50%;
+    padding-left: 40px;
+    margin-right: 40px;
+}
+
+#story_content .content {
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+
+#story_content .infobutton {
+    padding-bottom: 10%;
+}
+
+#story_image {
+    width: 50%;
+    overflow: hidden;
+    margin: 30px;
+    background-image: url(img/friends_olive_picking.jpg);
+    background-size: cover;
+    background-position: center;
+}
+*/
+    
+    
+    
+    
+    
+    
+    
+.four_images{
+    display: flex;
+    padding: 10px;
+}
+
+.four_images img {
+    width: 25%;
+    height: auto;
+    padding: 3px;
+    object-fit: cover;
+}
+
+.three_images{
+    display: flex;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-top: 1px;
+}
+
+.three_images img {
+/*    width: auto;*/
+    height: auto;
+    padding: 3px;
+    object-fit: cover;
+}
+
+.two_images{
+    display: flex;
+    padding: 3px;
+}
+.two_images img {
+    width: 50%;
+    height: auto;
+    padding: 3px;
+}
+
