@@ -8,24 +8,24 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     
-    
     <body>
         <section id="banner" style="background-image: url(landscape/view_of_mt_barker.JPG);">
-            
-                <nav>
-                    <ul class="nav-list">
-                        <li><a href="./">HOME</a></li>
-                        <li><a href="grove">THE GROVE</a></li>
-                        <li><a href="oil">THE OIL</a></li>
-                        <li><a href="space">THE SPACE</a></li>
-                        <li><a href="story">THE STORY</a></li>
-                        <li><a href="contact">CONTACT</a></li>
-                    </ul>
-                </nav>
+
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="./">HOME</a></li>
+                    <li><a href="grove">THE GROVE</a></li>
+                    <li><a href="oil">THE OIL</a></li>
+                    <li><a href="space">THE SPACE</a></li>
+                    <li><a href="story">THE STORY</a></li>
+                    <li><a href="contact">CONTACT</a></li>
+                </ul>
+            </nav>
             
             <div id="banner_img">
                 <img src="./MBlogo_f4f4f5.png" alt="" class="logo" />
             </div>
+            
         </section>
         
 <!--        location and email, join the newsletter, spiel about the newsletter, limited amount of olive oil, 100L, interested in new seasons harvest, keep up to date with how the harvest is going, 
@@ -43,46 +43,20 @@
             </div>
             
             <div id="right">
-            
                 <div class="content">
-                        <h1>SIGN UP TO OUR NEWSLETTER</h1>
-                        <p>Join us on this journey and stay in touch!</p>
-                    </div>
-                    <!--<form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="bba24ab1-0419-4e90-be31-815d216cb6bd">
-                        <div><label for="name"></label>
-                        <input type="text" placeholder="NAME" name="Name" required></div>
-                        
-                        <div><label for="email"></label>
-                        <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
-                        
-                        <button type="submit">JOIN!</button>
-                https://script.google.com/macros/s/AKfycbyPYwMo3C6SAiR51HyF4RU1xBPUl79xSLRI5qk9S1Payaphat8YCNvsfBmFKO7j5n12/exec
-                    </form>-->
-                <!--
-                    <form method="POST" action="https://script.google.com/macros/s/AKfycbyJwvdL6nteoy1kwQt9R6gCfhCp9DNJFRRx5T8bILDrAwmf8OTwO5d-9JdB0ZUKbSzyiQ/exec">
-                        <div><label for="name"></label>
-                        <input type="text" placeholder="NAME" name="name" required></div>
-                            
-                        <div><label for="email"></label>
-                        <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
-                
-                        <button type="submit">JOIN!</button>
-                    </form>-->
-                    <form action="" method="POST" name="contact-form">
-                        <div><label for="name"></label>
-                        <input type="text" placeholder="NAME" name="Name" required></div>
-                            
-                        <div><label for="email"></label>
-                        <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
-                
-                        <button type="submit">JOIN!</button>
-                    </form>
+                    <h1>SIGN UP TO OUR NEWSLETTER</h1>
+                    <p>Join us on this journey and stay in touch!</p>
+                </div>
+                    
+                <form action="" method="POST" name="contact-form">
+                    <div><label for="name"></label>
+                    <input type="text" placeholder="NAME" name="Name" required></div>
+                    <div><label for="email"></label>
+                    <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
+                    <button type="submit">JOIN!</button>
+                </form>
             </div>
-            
-
         </section>
-        
         
         <section id="footer_img"  style="background-image: url(./mtbarker.JPG);">
             <div class="container">
@@ -100,13 +74,13 @@
                         <h1>GOOD OIL, GOOD PEOPLE</h1>
                         <p>Join us on this journey and stay in touch!</p>
                     </div>
-                    <form method="POST" action="https://script.google.com/macros/s/AKfycbyJwvdL6nteoy1kwQt9R6gCfhCp9DNJFRRx5T8bILDrAwmf8OTwO5d-9JdB0ZUKbSzyiQ/exec">
+                    <!--<form method="POST" action="https://script.google.com/macros/s/AKfycbyJwvdL6nteoy1kwQt9R6gCfhCp9DNJFRRx5T8bILDrAwmf8OTwO5d-9JdB0ZUKbSzyiQ/exec">
                         <label for="name"></label><br>
                         <input type="text" placeholder="NAME" name="Name" required>
                         <label for="email"></label><br>
                         <input type="text" placeholder="EMAIL ADDRESS" name="Email" required><br><br>
                         <button type="submit">JOIN!</button>
-                    </form>
+                    </form>-->
                     <!--<form action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="bba24ab1-0419-4e90-be31-815d216cb6bd">
                         <label for="name"></label><br>
@@ -115,7 +89,14 @@
                         <input type="text" placeholder="EMAIL ADDRESS" name="email" required><br><br>
                         <button type="submit">JOIN!</button>
                     </form>-->
-
+                    <form action="" method="POST" name="contact-form">
+                        <label for="name"></label><br>
+                        <input type="text" placeholder="NAME" name="Name" required>
+                        <label for="email"></label><br>
+                        <input type="text" placeholder="EMAIL ADDRESS" name="Email" required><br><br>
+                        <button type="submit">JOIN!</button>
+                    </form>
+                    
                     <p class="footertext">© 2025 MOUNT BARKER OLIVE GROVE | <a href="contact">Contact Us</a></p>
                 </div>
             </div>
@@ -128,7 +109,7 @@
               e.preventDefault()
   
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-              .then(response => alert("Your form has been successfully submitted! \n\nWe truly appreciate your interest and will be in touch with you when the next season of newsletters comes out. \n\nHave a sweet day! :)" ))
+              .then(response => alert("\nYour form has been successfully submitted! \n\nWe truly appreciate your interest and will be in touch when the next newsletter comes out. \n\nHave a sweet day! :)" ))
               .then(() => { window.location.reload(); })
               .catch(error => error('Error!', error.message))
             })
