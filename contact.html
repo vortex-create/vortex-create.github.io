@@ -69,12 +69,12 @@
                 
                         <button type="submit">JOIN!</button>
                     </form>-->
-                    <form action="https://script.google.com/macros/s/AKfycbxWzVRGs68Brhlw0zOHKUjVy5QzdfCD_SahY_buS13rSLf8SihtQfFx4MOkPWzmdsGP/exec" method="POST" name="contact-form">
+                    <form action="" method="POST" name="contact-form">
                         <div><label for="name"></label>
                         <input type="text" placeholder="NAME" name="Name" required></div>
                             
                         <div><label for="email"></label>
-                        <input type="email" placeholder="EMAIL ADDRESS" name="Email" required></div>
+                        <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
                 
                         <button type="submit">JOIN!</button>
                     </form>
@@ -121,6 +121,18 @@
             </div>
         </section>
         
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxWzVRGs68Brhlw0zOHKUjVy5QzdfCD_SahY_buS13rSLf8SihtQfFx4MOkPWzmdsGP/exec'
+            const form = document.forms['contact-form']
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+  
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => alert("Your form has been successfully submitted! We truly appreciate your interest and will be in touch with you when the next season of newsletters comes out. Have a sweet day! :)" ))
+              .then(() => { window.location.reload(); })
+              .catch(error => error('Error!', error.message))
+            })
+        </script>
         
     </body>
 </html>
