@@ -128,7 +128,7 @@
               e.preventDefault()
   
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-              .then(response => alert("Your form has been successfully submitted! /n/nWe truly appreciate your interest and will be in touch with you when the next season of newsletters comes out. /n/nHave a sweet day! :)" ))
+              .then(response => alert("Your form has been successfully submitted! \n\nWe truly appreciate your interest and will be in touch with you when the next season of newsletters comes out. \n\nHave a sweet day! :)" ))
               .then(() => { window.location.reload(); })
               .catch(error => error('Error!', error.message))
             })
