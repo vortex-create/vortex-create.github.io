@@ -76,10 +76,10 @@
                         <p>Join us on this journey and stay in touch!</p>
                     </div>
                     
-                    <form action="" method="POST" name="contact-form">
+                    <form action="" method="POST" name="contact-form2">
                         <input type="hidden" name="sheetName" value="Sheet2">
                         <label for="name"></label><br>
-                        <input type="text" placeholder="NAME4" name="Name2" required>
+                        <input type="text" placeholder="NAME" name="Name2" required>
                         <label for="email"></label><br>
                         <input type="text" placeholder="EMAIL ADDRESS" name="Email2" required><br><br>
                         <button type="submit">JOIN!</button>
@@ -102,6 +102,17 @@
         <script>
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzaviEVakMTctNzikZIcZg742lqb-0DXAFsKU8UAXVDxMY4qV_kdGYX2X7xW3j5rWpx/exec';
             const form = document.forms['contact-form'];
+            form.addEventListener('submit', (e) => {
+              e.preventDefault();
+  
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then((response) => alert("\nYour form has been successfully submitted! \n\nWe truly appreciate your interest and will be in touch when the next newsletter comes out. \n\nHave a sweet day! :)" ))
+              .then(() => { window.location.reload(); })
+              .catch((error) => error('Error!', error.message));
+            });
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzaviEVakMTctNzikZIcZg742lqb-0DXAFsKU8UAXVDxMY4qV_kdGYX2X7xW3j5rWpx/exec';
+            const form = document.forms['contact-form2'];
             form.addEventListener('submit', (e) => {
               e.preventDefault();
   
