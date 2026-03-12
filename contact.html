@@ -49,6 +49,7 @@
                 </div>
                     
                 <form action="" method="POST" name="contact-form">
+                    <input type="hidden" name="sheetName" value="Sheet1"/>
                     <div><label for="name"></label>
                     <input type="text" placeholder="NAME" name="Name" required></div>
                     <div><label for="email"></label>
@@ -84,6 +85,7 @@
                     </form>-->
 
                     <form action="" method="POST" name="contact-form">
+                        <input type="hidden" name="sheetName" value="Sheet2"/>
                         <div><label for="name"></label>
                         <input type="text" placeholder="NAME1" name="Name" required></div>
                         <div><label for="email"></label>
@@ -97,7 +99,7 @@
         </section>
         
         <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxWzVRGs68Brhlw0zOHKUjVy5QzdfCD_SahY_buS13rSLf8SihtQfFx4MOkPWzmdsGP/exec'
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzaviEVakMTctNzikZIcZg742lqb-0DXAFsKU8UAXVDxMY4qV_kdGYX2X7xW3j5rWpx/exec'
             const form = document.forms['contact-form']
             form.addEventListener('submit', e => {
               e.preventDefault()
