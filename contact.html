@@ -100,16 +100,16 @@
         </section>
         
         <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzaviEVakMTctNzikZIcZg742lqb-0DXAFsKU8UAXVDxMY4qV_kdGYX2X7xW3j5rWpx/exec'
-            const form = document.forms['contact-form']
-            form.addEventListener('submit', e => {
-              e.preventDefault()
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzaviEVakMTctNzikZIcZg742lqb-0DXAFsKU8UAXVDxMY4qV_kdGYX2X7xW3j5rWpx/exec';
+            const form = document.forms['contact-form'];
+            form.addEventListener('submit', (e) => {
+              e.preventDefault();
   
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-              .then(response => alert("\nYour form has been successfully submitted! \n\nWe truly appreciate your interest and will be in touch when the next newsletter comes out. \n\nHave a sweet day! :)" ))
+              .then((response) => alert("\nYour form has been successfully submitted! \n\nWe truly appreciate your interest and will be in touch when the next newsletter comes out. \n\nHave a sweet day! :)" ))
               .then(() => { window.location.reload(); })
-              .catch(error => error('Error!', error.message))
-            })
+              .catch((error) => error('Error!', error.message));
+            });
         </script>
         
     </body>
