@@ -48,7 +48,7 @@
                     <p>Join us on this journey and stay in touch!</p>
                 </div>
                     
-                <form class="contact-form">
+                <form action="" method="POST" class="contact-form">
                     <!--<input type="hidden" name="sheetName" value="Sheet1">-->
                     <div><label for="name"></label>
                     <input type="text" placeholder="NAME5" name="Name" required></div>
@@ -76,100 +76,35 @@
                         <p>Join us on this journey and stay in touch!</p>
                     </div>
                     
-                    <form class="contact-form">
+                    <form action="" method="POST" class="contact-form">
                         <!--<input type="hidden" name="sheetName" value="Sheet2">-->
                         <label for="name"></label><br>
-                        <input type="text" placeholder="NAME" name="Name" required>
+                        <input type="text" placeholder="NA5ME" name="Name" required>
                         <label for="email"></label><br>
                         <input type="text" placeholder="EMAIL ADDRESS" name="Email" required><br><br>
                         <button type="submit">JOIN!</button>
                     </form>
-
-                    <!--<form action="" method="POST" name="contact-form">
-                        <input type="hidden" name="sheetName" value="Sheet2"/>
-                        <div><label for="name"></label>
-                        <input type="text" placeholder="NAME01" name="Name" required></div>
-                        <div><label for="email"></label>
-                        <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
-                        <button type="submit">JOIN!</button>
-                    </form>-->
-                    
+                
                     <p class="footertext">© 2025 MOUNT BARKER OLIVE GROVE | <a href="contact">Contact Us</a></p>
                 </div>
             </div>
         </section>
         
         <script>
-
-          document.addEventListener("DOMContentLoaded", function() {
-
-  const scriptURL = "https://script.google.com/macros/s/AKfycby2_MJv6co2I3Np8Ip-KVzc99yBvN1EMJSofor-F6J3QbIIqj0qg_X_swgYiwrmBj8Hvg/exec"; 
-
-  const forms = document.querySelectorAll(".contact-form");
-
-  forms.forEach(form => {
-    form.addEventListener("submit", function(e) {
-      e.preventDefault(); // Stop page reload
-
-      const formData = new FormData(form);
-
-      fetch(scriptURL, {
-        method: "POST",
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.result === "success") {
-          alert("Thanks for joining the newsletter! 🎉");
-          form.reset();
-        } else {
-          alert("Error submitting form: " + (data.message || "Unknown error"));
-        }
-      })
-      .catch(error => {
-        console.error("Error!", error);
-        alert("Network error. Please try again.");
-      });
-
-    });
-  });
-
-});
-
-            <!--const scriptURL = 'https://script.google.com/macros/s/AKfycbw0GQFRssRq9kswOyjpvAxE34eLCWf0BXho13l7EYSRPGf1Iz3azfwcpMPBVRJEHA/exec';-->
-            <!--const scriptURL = 'https://script.google.com/macros/s/AKfycbzaviEVakMTctNzikZIcZg742lqb-0DXAFsKU8UAXVDxMY4qV_kdGYX2X7xW3j5rWpx/exec';-->
-            <!--
-                if (formName === 'contact-form') {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbw0GQFRssRq9kswOyjpvAxE34eLCWf0BXho13l7EYSRPGf1Iz3azfwcpMPBVRJEHA/exec';
-                    const form = document.forms['contact-form'];
-                } else if (formName === 'contact-form2') {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbzaviEVakMTctNzikZIcZg742lqb-0DXAFsKU8UAXVDxMY4qV_kdGYX2X7xW3j5rWpx/exec';
-                    const form = document.forms['contact-form2'];
-                } else {
-                    console.log('Unknown form submitted.');
-                }-->
-    <!--
+  
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxWzVRGs68Brhlw0zOHKUjVy5QzdfCD_SahY_buS13rSLf8SihtQfFx4MOkPWzmdsGP/exec';
             const forms = document.querySelectorAll(".contact-form");
-            forms.forEach(form => {
-              form.addEventListener('submit', (e) => {
-                  e.preventDefault();
-      
-                  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                  .then((response) => alert("\nYour form has been successfully submitted! \n\nWe truly appreciate your interest and will be in touch when the next newsletter comes out. \n\nHave a sweet day! :)" ))
-                  .then(() => { window.location.reload(); })
-                  .catch((error) => error('Error!', error.message));
-                });
-            });
--->
+
             <!--const form = document.forms['contact-form'];-->
-            <!--form.addEventListener('submit', (e) => {
+    
+            form.addEventListener('submit', (e) => {
               e.preventDefault();
   
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
               .then((response) => alert("\nYour form has been successfully submitted! \n\nWe truly appreciate your interest and will be in touch when the next newsletter comes out. \n\nHave a sweet day! :)" ))
               .then(() => { window.location.reload(); })
               .catch((error) => error('Error!', error.message));
-            }); -->
+            }); 
         </script>
         
     </body>
