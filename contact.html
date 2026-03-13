@@ -59,7 +59,7 @@
                 
                 <form id="form1">
                     <div><label for="name"></label>
-                    <input type="text" placeholder="NAMeE" name="Name" required></div>
+                    <input type="text" placeholder="NAMeeE" name="Name" required></div>
                     <div><label for="email"></label>
                     <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
                     <button type="submit">JOIN!</button>
@@ -107,10 +107,11 @@
         </section>
         
         <script>
-  const webAppUrl = "https://script.google.com/macros/s/AKfycbzeOo8dgccivU2otc_ktH4mIkRXjIIUiHqtp250O1acy_CjMdN0kVqYIuOnvAJYG7Oz/exec";
+  const webAppUrl = "https://script.google.com/macros/s/AKfycbyfNocOT9MPWzfOdD2DGFvOqxUp6SpBvatlxPK20H2k3tQ2Oxxu-y_PsJS3GaLtXnRE/exec";
 
     async function handleSubmit(event) {
-      event.preventDefault();
+      event.preventDefault(); // Prevent page reload
+
       const formData = new FormData(event.target);
       const params = new URLSearchParams();
       for (const pair of formData.entries()) {
@@ -122,11 +123,20 @@
           method: "POST",
           body: params
         });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const result = await response.json();
-        alert("Form submitted successfully!");
-        event.target.reset();
+        if (result.result === "success") {
+          alert("Form submitted successfully!");
+          event.target.reset();
+        } else {
+          alert("Error: " + result.message);
+        }
       } catch (err) {
-        alert("Error submitting form: " + err.message);
+        alert("Failed to submit: " + err.message);
       }
     }
 
