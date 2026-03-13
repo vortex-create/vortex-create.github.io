@@ -48,22 +48,22 @@
                     <p>Join us on this journey and stay in touch!</p>
                 </div>
                     
-                <!--<form action="" method="POST" class="contact-form">
-                    <input type="hidden" name="sheetName" value="Sheet1">
+                <<form action="" method="POST" class="contact-form">
+                    <input type="hidden" name="sheetName" value="Contact1">
                     <div><label for="name"></label>
                     <input type="text" placeholder="NAME" name="Name" required></div>
                     <div><label for="email"></label>
                     <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
                     <button type="submit">JOIN!</button>
-                </form>-->
+                </form>
                 
-                <form id="form1">
+                <!--<form id="form1">
                     <div><label for="name"></label>
                     <input type="text" placeholder="NAMeeE" name="Name" required></div>
                     <div><label for="email"></label>
                     <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
                     <button type="submit">JOIN!</button>
-                </form>
+                </form>-->
                 
             </div>
         </section>
@@ -85,21 +85,21 @@
                         <p>Join us on this journey and stay in touch!</p>
                     </div>
                     
-                    <!--<form action="" method="POST" class="contact-form">
-                        <input type="hidden" name="sheetName" value="Sheet2">
-                        <label for="name"></label><br>
-                        <input type="text" placeholder="NAME" name="Name" required>
-                        <label for="email"></label><br>
-                        <input type="text" placeholder="EMAIL ADDRESS" name="Email" required><br><br>
-                        <button type="submit">JOIN!</button>
-                    </form>-->
-                    <form id="form2">
+                    <form action="" method="POST" class="contact-form">
+                        <input type="hidden" name="sheetName" value="Contact2">
                         <label for="name"></label><br>
                         <input type="text" placeholder="NAME" name="Name" required>
                         <label for="email"></label><br>
                         <input type="text" placeholder="EMAIL ADDRESS" name="Email" required><br><br>
                         <button type="submit">JOIN!</button>
                     </form>
+                    <!--<form id="form2">
+                        <label for="name"></label><br>
+                        <input type="text" placeholder="NAME" name="Name" required>
+                        <label for="email"></label><br>
+                        <input type="text" placeholder="EMAIL ADDRESS" name="Email" required><br><br>
+                        <button type="submit">JOIN!</button>
+                    </form>-->
                 
                     <p class="footertext">© 2025 MOUNT BARKER OLIVE GROVE | <a href="contact">Contact Us</a></p>
                 </div>
@@ -107,41 +107,6 @@
         </section>
         
         <script>
-  const webAppUrl = "https://script.google.com/macros/s/AKfycbyfNocOT9MPWzfOdD2DGFvOqxUp6SpBvatlxPK20H2k3tQ2Oxxu-y_PsJS3GaLtXnRE/exec";
-
-    async function handleSubmit(event) {
-      event.preventDefault(); // Prevent page reload
-
-      const formData = new FormData(event.target);
-      const params = new URLSearchParams();
-      for (const pair of formData.entries()) {
-        params.append(pair[0], pair[1]);
-      }
-
-      try {
-        const response = await fetch(webAppUrl, {
-          method: "POST",
-          body: params
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        if (result.result === "success") {
-          alert("Form submitted successfully!");
-          event.target.reset();
-        } else {
-          alert("Error: " + result.message);
-        }
-      } catch (err) {
-        alert("Failed to submit: " + err.message);
-      }
-    }
-
-    document.getElementById("form1").addEventListener("submit", handleSubmit);
-    document.getElementById("form2").addEventListener("submit", handleSubmit);
 
             <!--const form = document.forms['contact-form'];-->
             
@@ -157,6 +122,21 @@
               .then(() => { window.location.reload(); })
               .catch((error) => error('Error!', error.message));
             }); -->
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyFTPRD6s5Zi3pOlNhwsn2nV0yD5gDCd_6a756C22JT6WBvrrR8fh6sq9Nz-GRMhT5O_g/exec'
+
+            const form = document.forms['contact-form']
+            
+            form.addEventListener('submit', e => {
+              
+              e.preventDefault()
+              
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => alert("\nYour form has been successfully submitted! \n\nWe truly appreciate your interest and will be in touch when the next newsletter comes out. \n\nHave a sweet day! :)" ))
+              .then(() => { window.location.reload(); })
+              .catch(error => error('Error!', error.message))
+            })
+                                                      
         </script>
         
     </body>
