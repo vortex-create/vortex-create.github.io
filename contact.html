@@ -51,7 +51,7 @@
                 <form action="" method="POST" name="contact-form">
                     <input type="hidden" name="sheetName" value="Sheet1">
                     <div><label for="name"></label>
-                    <input type="text" placeholder="NAME10" name="Name" required></div>
+                    <input type="text" placeholder="NAME0" name="Name" required></div>
                     <div><label for="email"></label>
                     <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
                     <button type="submit">JOIN!</button>
@@ -100,6 +100,34 @@
         </section>
         
         <script>
+
+            // 1. Declare variables outside the conditional scope
+                let scriptURL = '';
+                let form = null;
+                
+                if (formName === 'contact-form') {
+                    scriptURL = 'https://script.google.com/macros/s/AKfycbw0GQFRssRq9kswOyjpvAxE34eLCWf0BXho13l7EYSRPGf1Iz3azfwcpMPBVRJEHA/exec';
+                    form = document.forms['contact-form'];
+                } else if (formName === 'contact-form2') {
+                    scriptURL = 'https://script.google.com/macros/s/AKfycbzaviEVakMTctNzikZIcZg742lqb-0DXAFsKU8UAXVDxMY4qV_kdGYX2X7xW3j5rWpx/exec';
+                    form = document.forms['contact-form2'];
+                }
+                
+                // 2. Ensure form and URL exist before adding event listener
+                if (form) {
+                    form.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                        .then((response) => {
+                            alert("\nYour form has been successfully submitted!...");
+                            window.location.reload();
+                        })
+                        .catch((error) => console.error('Error!', error.message)); // 3. Fixed catch
+                    });
+                } else {
+                    console.log('Form not found.');
+                }
+<!--
             <!--const scriptURL = 'https://script.google.com/macros/s/AKfycbw0GQFRssRq9kswOyjpvAxE34eLCWf0BXho13l7EYSRPGf1Iz3azfwcpMPBVRJEHA/exec';-->
             <!--const scriptURL = 'https://script.google.com/macros/s/AKfycbzaviEVakMTctNzikZIcZg742lqb-0DXAFsKU8UAXVDxMY4qV_kdGYX2X7xW3j5rWpx/exec';-->
 
@@ -121,7 +149,7 @@
               .then((response) => alert("\nYour form has been successfully submitted! \n\nWe truly appreciate your interest and will be in touch when the next newsletter comes out. \n\nHave a sweet day! :)" ))
               .then(() => { window.location.reload(); })
               .catch((error) => error('Error!', error.message));
-            });
+            }); -->
         </script>
         
     </body>
