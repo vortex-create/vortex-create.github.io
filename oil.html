@@ -72,8 +72,9 @@
                         <h1>GOOD OIL, GOOD PEOPLE</h1>
                         <p>Join us on this journey and stay in touch!</p>
                     </div>
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="bba24ab1-0419-4e90-be31-815d216cb6bd">
+                    <form action="" method="POST" name="contact-form">
+                        <input type="hidden" name="sheetName" value="Oil1">
+
                         <label for="name"></label><br>
                         <input type="text" placeholder="NAME" name="name" required><br>
                         <label for="email"></label><br>
@@ -89,7 +90,22 @@
                 </div>
             </div>
         </section>
-        
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyFTPRD6s5Zi3pOlNhwsn2nV0yD5gDCd_6a756C22JT6WBvrrR8fh6sq9Nz-GRMhT5O_g/exec'
+            const form = document.forms['contact-form']
+            
+            form.addEventListener('submit', e => {
+              
+              e.preventDefault()
+              
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => alert("\nYour form has been successfully submitted! \n\nWe truly appreciate your interest and will be in touch when the next newsletter comes out. \n\nHave a sweet day! :)" ))
+              .then(() => { window.location.reload(); })
+              .catch(error => error('Error!', error.message))
+            })
+                                                      
+        </script>
+
         
     </body>
 </html>
