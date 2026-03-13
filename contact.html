@@ -51,7 +51,7 @@
                 <form class="contact-form">
                     <!--<input type="hidden" name="sheetName" value="Sheet1">-->
                     <div><label for="name"></label>
-                    <input type="text" placeholder="NAME6655" name="Name" required></div>
+                    <input type="text" placeholder="NAME66666655" name="Name" required></div>
                     <div><label for="email"></label>
                     <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
                     <button type="submit">JOIN!</button>
@@ -101,42 +101,38 @@
         
         <script>
 
-            
+          document.addEventListener("DOMContentLoaded", function() {
 
-document.addEventListener("DOMContentLoaded", function() {
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzeOo8dgccivU2otc_ktH4mIkRXjIIUiHqtp250O1acy_CjMdN0kVqYIuOnvAJYG7Oz/exec"; 
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbzeOo8dgccivU2otc_ktH4mIkRXjIIUiHqtp250O1acy_CjMdN0kVqYIuOnvAJYG7Oz/exec";
-    const forms = document.querySelectorAll(".contact-form");
+  const forms = document.querySelectorAll(".contact-form");
 
-    forms.forEach(form => {
+  forms.forEach(form => {
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // Stop page reload
 
-        form.addEventListener("submit", function(e) {
+      const formData = new FormData(form);
 
-            e.preventDefault(); // Stop the default page reload
-
-            const formData = new FormData(form);
-
-            fetch(scriptURL, {
-                method: "POST",
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === "success") {
-                    alert("Thanks for joining the newsletter! ");
-                    form.reset();
-                } else {
-                    alert("There was a problem submitting your form. Please try again.");
-                }
-            })
-            .catch(error => {
-                console.error("Error!", error);
-                alert("There was a network error. Please try again later.");
-            });
-
-        });
+      fetch(scriptURL, {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.result === "success") {
+          alert("Thanks for joining the newsletter! 🎉");
+          form.reset();
+        } else {
+          alert("Error submitting form: " + (data.message || "Unknown error"));
+        }
+      })
+      .catch(error => {
+        console.error("Error!", error);
+        alert("Network error. Please try again.");
+      });
 
     });
+  });
 
 });
 
