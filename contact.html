@@ -48,10 +48,10 @@
                     <p>Join us on this journey and stay in touch!</p>
                 </div>
                     
-                <form method="POST" class="contact-form">
+                <form class="contact-form">
                     <!--<input type="hidden" name="sheetName" value="Sheet1">-->
                     <div><label for="name"></label>
-                    <input type="text" placeholder="NAME555440" name="Name" required></div>
+                    <input type="text" placeholder="NAME55" name="Name" required></div>
                     <div><label for="email"></label>
                     <input type="text" placeholder="EMAIL ADDRESS" name="Email" required></div>
                     <button type="submit">JOIN!</button>
@@ -76,7 +76,7 @@
                         <p>Join us on this journey and stay in touch!</p>
                     </div>
                     
-                    <form method="POST" class="contact-form">
+                    <form class="contact-form">
                         <!--<input type="hidden" name="sheetName" value="Sheet2">-->
                         <label for="name"></label><br>
                         <input type="text" placeholder="NAME" name="Name" required>
@@ -101,28 +101,41 @@
         
         <script>
 
-            const scriptURL = "https://script.google.com/macros/s/AKfycbzaviEVakMTctNzikZIcZg742lqb-0DXAFsKU8UAXVDxMY4qV_kdGYX2X7xW3j5rWpx/exec";
+            const scriptURL = "https://script.google.com/macros/s/AKfycbzeOo8dgccivU2otc_ktH4mIkRXjIIUiHqtp250O1acy_CjMdN0kVqYIuOnvAJYG7Oz/exec";
 
-            const forms = document.querySelectorAll(".contact-form");
-            
-            forms.forEach(form => {
-            
-              form.addEventListener("submit", e => {
-                e.preventDefault();
-            
-                fetch(scriptURL, {
-                  method: "POST",
-                  body: new FormData(form),
-                  mode: "no-cors"
-                })
-                .then(() => {
-                  alert("Your form has been successfully submitted!\n\nWe truly appreciate your interest and will be in touch when the next newsletter comes out.\n\nHave a sweet day! :)");
-                  form.reset();
-                })
-                .catch(error => console.error("Error!", error));
-              });
-            
-            });
+const forms = document.querySelectorAll(".contact-form");
+
+forms.forEach(form => {
+
+  form.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: formData
+    })
+    .then(() => {
+
+      alert("Thanks for joining the newsletter!");
+
+      form.reset();
+
+    })
+    .catch(error => {
+
+      alert("Something went wrong. Please try again.");
+
+      console.error("Error!", error);
+
+    });
+
+  });
+
+});
+
 
             <!--const scriptURL = 'https://script.google.com/macros/s/AKfycbw0GQFRssRq9kswOyjpvAxE34eLCWf0BXho13l7EYSRPGf1Iz3azfwcpMPBVRJEHA/exec';-->
             <!--const scriptURL = 'https://script.google.com/macros/s/AKfycbzaviEVakMTctNzikZIcZg742lqb-0DXAFsKU8UAXVDxMY4qV_kdGYX2X7xW3j5rWpx/exec';-->
