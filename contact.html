@@ -48,7 +48,7 @@
                     <p>Join us on this journey and stay in touch!</p>
                 </div>
                     
-                <<form action="" method="POST" class="contact-form">
+                <form action="" method="POST" class="contact-form">
                     <input type="hidden" name="sheetName" value="Contact1">
                     <div><label for="name"></label>
                     <input type="text" placeholder="NAME" name="Name" required></div>
@@ -124,8 +124,8 @@
             }); -->
 
             const scriptURL = 'https://script.google.com/macros/s/AKfycbyFTPRD6s5Zi3pOlNhwsn2nV0yD5gDCd_6a756C22JT6WBvrrR8fh6sq9Nz-GRMhT5O_g/exec'
-
-            const form = document.forms['contact-form']
+            const forms = document.querySelectorAll(".contact-form");
+            <!--const form = document.forms['contact-form']-->
             
             form.addEventListener('submit', e => {
               
